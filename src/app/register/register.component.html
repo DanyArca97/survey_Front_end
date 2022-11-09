@@ -1,0 +1,15 @@
+<div id="maschera login">
+  <label for="mail">Mail</label>
+  <input type="text" id="mail" ><br>
+  <label for="password">Password</label>
+  <input type="password" id="password"><br>
+
+
+</div>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>CHIUDI</button>
+
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="doRegister()">CONFERMA</button>
+
+</mat-dialog-actions>
