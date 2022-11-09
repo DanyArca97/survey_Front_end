@@ -39,17 +39,14 @@ export class FirsthomeComponent implements OnInit {
 
       //result è già Object, non devo fare JSON.parse
 
+      if (result["loginCheck"]) {
+        let navigationExtras : NavigationExtras = {//Costruisco struttura da mandare alla pagina home
+          queryParams : {
+            'mail':result["mail"]
+          },
+          skipLocationChange : true
+        };
 
-      let navigationExtras : NavigationExtras = {//Costruisco struttura da mandare alla pagina home
-        queryParams : {
-          'mail':result["mail"]
-        },
-        skipLocationChange : true
-      };
-
-
-
-      if (result["loginCheck"] === "login-ok") {
         this.router.navigate(['/home'], navigationExtras); // mando info a home
       }
     });
