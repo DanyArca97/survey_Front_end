@@ -12,11 +12,14 @@ import { MatCardModule            } from '@angular/material/card';
 import { MatInputModule           } from '@angular/material/input';
 import { MatIconModule            } from '@angular/material/icon';
 import { MatButtonModule          } from '@angular/material/button';
-import { ReactiveFormsModule      } from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { RegisterComponent } from "./register/register.component";
-import{SurveyListComponent } from "./survey-list/survey-list.component";
+import { SurveyListComponent } from "./survey-list/survey-list.component";
 import { HomeComponent} from "./home/home.component";
 import { FirsthomeComponent } from './firsthome/firsthome.component';
+import {MatTableModule} from "@angular/material/table";
+import { DialogPartecipateComponent } from './dialog-partecipate/dialog-partecipate.component';
+import {MatRadioModule} from "@angular/material/radio";
 
 // @ts-ignore
 // @ts-ignore
@@ -28,7 +31,8 @@ import { FirsthomeComponent } from './firsthome/firsthome.component';
     DialogTemplateComponent,
     SurveyListComponent,
     HomeComponent,
-    FirsthomeComponent
+    FirsthomeComponent,
+    DialogPartecipateComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +44,10 @@ import { FirsthomeComponent } from './firsthome/firsthome.component';
     MatCardModule,
     MatInputModule,
     MatIconModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule,
+    MatRadioModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

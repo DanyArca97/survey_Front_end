@@ -66,5 +66,22 @@ export class FirsthomeComponent implements OnInit {
 
 
     const dialogRef = this.dialog.open(RegisterComponent, config);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(result);
+
+      //result è già Object, non devo fare JSON.parse
+
+      if (result["registerCheck"]) {
+        let navigationExtras : NavigationExtras = {//Costruisco struttura da mandare alla pagina home
+          queryParams : {
+            'mail':result["mail"]
+          },
+          skipLocationChange : true
+        };
+
+        this.router.navigate(['/home'], navigationExtras); // mando info a home
+      }
+    });
   }
 }
